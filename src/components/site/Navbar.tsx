@@ -11,7 +11,7 @@ export const Navbar = () => {
 								href="/"
 								className="inline-flex h-10 select-none items-center justify-center text-lg font-bold text-gray-800"
 							>
-								nntkz
+								nnktz
 							</a>
 						</div>
 
