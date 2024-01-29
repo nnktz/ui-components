@@ -83,6 +83,7 @@ const App = () => {
 							hoverBg: "hover:bg-amber-500",
 							hoverBorder: "border-amber-500",
 							focusRing: "ring-amber-500",
+							darkHoverBorder: "dark:hover:border-amber-500",
 						}}
 					>
 						Amber
@@ -94,6 +95,7 @@ const App = () => {
 							hoverBg: "hover:bg-rose-500",
 							hoverBorder: "border-rose-500",
 							focusRing: "ring-rose-500",
+							darkHoverBorder: "dark:hover:border-rose-500",
 						}}
 					>
 						Rose
@@ -105,6 +107,7 @@ const App = () => {
 							hoverBg: "hover:bg-fuchsia-500",
 							hoverBorder: "border-fuchsia-500",
 							focusRing: "ring-fuchsia-500",
+							darkHoverBorder: "dark:hover:border-fuchsia-500",
 						}}
 					>
 						Fuchsia
@@ -116,6 +119,7 @@ const App = () => {
 							hoverBg: "hover:bg-indigo-500",
 							hoverBorder: "border-indigo-500",
 							focusRing: "ring-indigo-500",
+							darkHoverBorder: "dark:hover:border-indigo-500",
 						}}
 					>
 						Indigo
@@ -127,6 +131,7 @@ const App = () => {
 							hoverBg: "hover:bg-blue-500",
 							hoverBorder: "border-blue-500",
 							focusRing: "ring-blue-500",
+							darkHoverBorder: "dark:hover:border-blue-500",
 						}}
 					>
 						Blue
@@ -147,6 +152,7 @@ const App = () => {
 							text: "text-amber-500",
 							hoverText: "hover:text-amber-700",
 							focusRing: "focus:ring-amber-500",
+							darkHoverText: "dark:hover:text-amber-400",
 						}}
 					>
 						Amber
@@ -157,6 +163,7 @@ const App = () => {
 							text: "text-rose-500",
 							hoverText: "hover:text-rose-700",
 							focusRing: "focus:ring-rose-500",
+							darkHoverText: "dark:hover:text-rose-400",
 						}}
 					>
 						Rose
@@ -167,6 +174,7 @@ const App = () => {
 							text: "text-fuchsia-500",
 							hoverText: "hover:text-fuchsia-700",
 							focusRing: "focus:ring-fuchsia-500",
+							darkHoverText: "dark:hover:text-fuchsia-400",
 						}}
 					>
 						Fuchsia
@@ -177,6 +185,7 @@ const App = () => {
 							text: "text-indigo-500",
 							hoverText: "hover:text-indigo-700",
 							focusRing: "focus:ring-indigo-500",
+							darkHoverText: "dark:hover:text-indigo-400",
 						}}
 					>
 						Indigo
@@ -187,6 +196,7 @@ const App = () => {
 							text: "text-blue-500",
 							hoverText: "hover:text-blue-700",
 							focusRing: "focus:ring-blue-500",
+							darkHoverText: "dark:hover:text-blue-400",
 						}}
 					>
 						Blue
@@ -213,6 +223,7 @@ const App = () => {
 							hoverBg: "hover:bg-red-600",
 							hoverBorder: "hover:border-red-500",
 							focusRing: "focus:ring-red-500",
+							darkHoverBorder: "dark:hover:border-red-500",
 						}}
 					>
 						Unsubscribe
@@ -223,6 +234,7 @@ const App = () => {
 							text: "text-red-500",
 							hoverText: "hover:text-red-600",
 							focusRing: "focus:ring-red-500",
+							darkHoverText: "dark:hover:text-zinc-400",
 						}}
 					>
 						Cancel

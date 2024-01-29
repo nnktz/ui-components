@@ -10,6 +10,7 @@ type PrimaryColors = {
 type SecondaryColors = {
 	text?: string
 	hoverBorder?: string
+	darkHoverBorder?: string
 	hoverBg?: string
 	focusRing?: string
 }
@@ -17,6 +18,7 @@ type SecondaryColors = {
 type TertiaryColors = {
 	text?: string
 	hoverText?: string
+	darkHoverText?: string
 	focusRing?: string
 }
 
@@ -56,11 +58,12 @@ export const Button: ButtonComponent = ({
 		switch (variant) {
 			case "primary":
 				return `border border-transparent py-3 text-white ${colorsProps.bg || "bg-emerald-500"} ${colorsProps.hoverBg || "hover:bg-emerald-600"} ${colorsProps.focusRing || "focus:ring-emerald-500"}`
+
 			case "secondary":
-				return `border-2 border-gray-200 py-[0.688rem] hover:text-white ${colorsProps.text || "text-emerald-500"} ${colorsProps.hoverBorder || "hover:border-emerald-500"} ${colorsProps.hoverBg || "hover:bg-emerald-500"} ${colorsProps.focusRing || "focus:ring-emerald-500"}`
+				return `border-2 border-gray-200 dark:border-zinc-700 py-[0.688rem] hover:text-white ${colorsProps.text || "text-emerald-500"} ${colorsProps.hoverBorder || "hover:border-emerald-500"} ${colorsProps.hoverBg || "hover:bg-emerald-500"} ${colorsProps.focusRing || "focus:ring-emerald-500"} ${colorsProps.darkHoverBorder || "dark:border-emerald-500"}`
 
 			case "tertiary":
-				return `border border-transparent py-3 underline-offset-4 ring-offset-white hover:underline ${colorsProps.text || "text-emerald-500"} ${colorsProps.hoverText || "hover:text-emerald-700"} ${colorsProps.focusRing || "focus:ring-emerald-500"}`
+				return `border border-transparent py-3 underline-offset-4 ring-offset-white hover:underline ${colorsProps.text || "text-emerald-500"} ${colorsProps.hoverText || "hover:text-emerald-700"} ${colorsProps.focusRing || "focus:ring-emerald-500"} ${colorsProps.darkHoverText || "dark:hover:text-emerald-400"}`
 
 			default:
 				return ""

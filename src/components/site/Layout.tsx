@@ -2,7 +2,7 @@ import { Navbar } from "./Navbar"
 
 export const Layout = ({ children }: React.PropsWithChildren) => {
 	return (
-		<div className="relative min-h-screen bg-white">
+		<div className="dark:bg relative min-h-screen bg-white dark:bg-zinc-900">
 			{/* navbar */}
 			<Navbar />
 
