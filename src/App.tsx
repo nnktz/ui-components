@@ -1,34 +1,44 @@
-import { useState } from "react"
-import reactLogo from "./assets/react.svg"
-import viteLogo from "/vite.svg"
-import "./App.css"
+import { FiFacebook, FiGithub } from "react-icons/fi"
 
-function App() {
-	const [count, setCount] = useState(0)
-
+const App = () => {
 	return (
-		<>
-			<div>
-				<a href="https://vitejs.dev" target="_blank">
-					<img src={viteLogo} className="logo" alt="Vite logo" />
-				</a>
-				<a href="https://react.dev" target="_blank">
-					<img src={reactLogo} className="logo react" alt="React logo" />
-				</a>
-			</div>
-			<h1>Vite + React</h1>
-			<div className="card">
-				<button onClick={() => setCount((count) => count + 1)}>
-					count is {count}
-				</button>
-				<p>
-					Edit <code>src/App.tsx</code> and save to test HMR
-				</p>
-			</div>
-			<p className="read-the-docs">
-				Click on the Vite and React logos to learn more
-			</p>
-		</>
+		<div>
+			{/* navbar */}
+			<header className="w-full border-b bg-white">
+				<div className="flex h-16 items-center px-10 sm:px-16 lg:px-44">
+					<div className="mx-auto w-full max-w-3xl space-y-20">
+						<div className="flex justify-between">
+							<div className="flex flex-1 items-center justify-start">
+								<a
+									href="/"
+									className="inline-flex h-10 items-center justify-center text-lg font-bold text-gray-800"
+								>
+									nntkz
+								</a>
+							</div>
+
+							<div className="flex flex-1 items-center justify-end">
+								<a
+									href="https://www.facebook.com/nhatnguyen.KTz"
+									className="h-10 w-10 p-2 text-gray-800 hover:text-[#ff0000]"
+								>
+									<FiFacebook className="h-full w-full" />
+								</a>
+
+								<a
+									href="https://github.com/nnktz"
+									className="h-10 w-10 p-2 text-gray-800 hover:text-[#4078c0]"
+								>
+									<FiGithub className="h-full w-full" />
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			{/* main content are */}
+		</div>
 	)
 }
 
