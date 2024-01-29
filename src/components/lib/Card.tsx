@@ -1,14 +1,32 @@
 import { twMerge } from "tailwind-merge"
 
-type Props = React.HTMLAttributes<HTMLDivElement>
+type Props = React.HTMLAttributes<HTMLDivElement> & {
+	widthLimit?: "none" | "xs" | "sm" | "md" | "lg"
+}
 
-export const CardContainer = ({ className, children, ...props }: Props) => {
+const cardWidths = {
+	xs: "max-w-xs",
+	sm: "max-w-sm",
+	md: "max-w-md",
+	lg: "max-w-lg",
+	none: "",
+}
+
+export const CardContainer = ({
+	widthLimit = "xs",
+	className,
+	children,
+	...props
+}: Props) => {
 	const baseClasses: string =
 		"rounded-xl border bg-white shadow-sm dark:bg-zinc-800 dark:border-zinc-700 dark:shadow-zinc-700/[.7]"
+
 	const mergedClasses = twMerge([baseClasses, className])
 
+	const widthClass = twMerge(["w-full", cardWidths[widthLimit]])
+
 	return (
-		<div className="w-full max-w-xs" {...props}>
+		<div className={widthClass} {...props}>
 			<div className={mergedClasses}>{children}</div>
 		</div>
 	)
@@ -25,6 +43,7 @@ type ContentCard = {
 		text: string
 	}
 	children?: React.ReactNode
+	widthLimit?: Props["widthLimit"]
 }
 
 export const ContentCard = ({
@@ -35,9 +54,10 @@ export const ContentCard = ({
 	plaintext,
 	link,
 	children,
+	widthLimit,
 }: ContentCard) => {
 	return (
-		<CardContainer>
+		<CardContainer widthLimit={widthLimit}>
 			{header && (
 				<div className="rounded-t-xl border-b bg-gray-100 px-4 py-3 md:px-5 md:py-4 dark:border-zinc-700 dark:bg-zinc-800">
 					<p className="mt-1 text-sm text-gray-500 dark:text-zinc-500">
@@ -87,9 +107,19 @@ type BlockLinkCardProps = {
 	url?: string
 	text?: string
 	children?: React.ReactNode
+	customLinkComponent?: React.ComponentType<any>
+	customLinkProps?: any
+	widthLimit?: Props["widthLimit"]
 }
 
-export const BlockLinkCard = ({ url, text, children }: BlockLinkCardProps) => {
+export const BlockLinkCard = ({
+	url,
+	text,
+	children,
+	customLinkComponent: CustomLinkComponent,
+	customLinkProps = {},
+	widthLimit,
+}: BlockLinkCardProps) => {
 	const linkClasses: string = "flex flex-col items-center p-6 sm:p-10"
 
 	const linkContent: JSX.Element = (
@@ -101,10 +131,24 @@ export const BlockLinkCard = ({ url, text, children }: BlockLinkCardProps) => {
 	)
 
 	return (
-		<CardContainer className="text-gray-800 transition-colors hover:bg-gray-200/50 dark:text-white dark:hover:bg-zinc-700">
-			<a href={url || "#"} className={linkClasses} target="_blank">
-				{linkContent}
-			</a>
+		<CardContainer
+			widthLimit={widthLimit}
+			className="text-gray-800 transition-colors hover:bg-gray-200/50 dark:text-white dark:hover:bg-zinc-700"
+		>
+			{CustomLinkComponent ? (
+				<CustomLinkComponent className={linkClasses} {...customLinkProps}>
+					{linkContent}
+				</CustomLinkComponent>
+			) : (
+				<a
+					href={url || "#"}
+					className={linkClasses}
+					target="_blank"
+					{...(customLinkProps as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
+				>
+					{linkContent}
+				</a>
+			)}
 		</CardContainer>
 	)
 }
