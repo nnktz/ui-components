@@ -2,7 +2,8 @@ import { Section } from "./components/site/Section"
 import { Container } from "./components/site/Container"
 import { Layout } from "./components/site/Layout"
 import { Button } from "./components/lib/Button"
-import { ContentCard } from "./components/lib/Card"
+import { BlockLinkCard, ContentCard } from "./components/lib/Card"
+import { SiNextdotjs, SiReact, SiTailwindcss, SiVite } from "react-icons/si"
 
 const App = () => {
 	return (
@@ -265,6 +266,31 @@ const App = () => {
 						plaintext="Some quick example text build on the card title and make up the bulk of the card's content"
 						link={{ url: "#", text: "Card link" }}
 					></ContentCard>
+				</Section>
+
+				<Section
+					title="Block link"
+					description="Simple cards enhanced into selectable block link."
+				>
+					{/* Vite card */}
+					<BlockLinkCard url="https://vitejs.dev" text="Vite">
+						<SiVite className="h-10 w-10" />
+					</BlockLinkCard>
+
+					{/* Next.js card */}
+					<BlockLinkCard url="https://nextjs.org" text="Next.js">
+						<SiNextdotjs className="h-10 w-10" />
+					</BlockLinkCard>
+
+					{/* React card */}
+					<BlockLinkCard url="https://react.dev" text="React">
+						<SiReact className="h-10 w-10" />
+					</BlockLinkCard>
+
+					{/* Tailwindcss card */}
+					<BlockLinkCard url="https://tailwindcss.com" text="Tailwind CSS">
+						<SiTailwindcss className="h-10 w-10" />
+					</BlockLinkCard>
 				</Section>
 			</Container>
 		</Layout>
