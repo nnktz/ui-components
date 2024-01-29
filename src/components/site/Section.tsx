@@ -1,16 +1,17 @@
+import { Title } from "./title"
+
 type Props = {
+	id?: string
 	title: string
 	description: string
 	children: React.ReactNode
 }
 
-export const Section = ({ title, description, children }: Props) => {
+export const Section = ({ id, title, description, children }: Props) => {
 	return (
 		<div>
 			{/* section heading */}
-			<h2 className="text-lg font-bold text-gray-800 dark:text-white">
-				{title}
-			</h2>
+			<Title id={id || title} title={title} />
 
 			{/* section description */}
 			<p className="mt-1 text-gray-600 dark:text-zinc-400">{description}</p>

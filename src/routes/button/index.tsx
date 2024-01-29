@@ -9,6 +9,7 @@ export const ButtonPage = () => {
 			description="A button is a widget that enables users to trigger an action or event, such as submitting a form, opening a dialog, cancelling an action, or performing a delete operation."
 		>
 			<Section
+				id="button-primary"
 				title="Primary"
 				description="Primary actions should be obvious. Solid, high contrast background colors work great here."
 			>
@@ -62,6 +63,7 @@ export const ButtonPage = () => {
 			</Section>
 
 			<Section
+				id="button-secondary"
 				title="Secondary"
 				description="Secondary actions should be clear but not prominent. Outline styles or lower contrast background colors are great options."
 			>
@@ -132,6 +134,7 @@ export const ButtonPage = () => {
 			</Section>
 
 			<Section
+				id="button-tertiary"
 				title="Tertiary"
 				description="Tertiary actions should be discoverable but unobtrusive. Styling these actions like links is usually the best approach."
 			>
@@ -197,6 +200,7 @@ export const ButtonPage = () => {
 			</Section>
 
 			<Section
+				id="button-destructive"
 				title="Destructive"
 				description="Destructive actions typically result in the removal of an item, and may result in an undesirable consequence."
 			>
