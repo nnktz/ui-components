@@ -1,4 +1,5 @@
 import { FiFacebook, FiGithub } from "react-icons/fi"
+import { Link } from "react-router-dom"
 import { ThemeToggle } from "./ThemeToggle"
 
 export const Navbar = () => {
@@ -8,12 +9,12 @@ export const Navbar = () => {
 				<div className="mx-auto w-full max-w-3xl space-y-20">
 					<div className="flex justify-between">
 						<div className="flex flex-1 items-center justify-start">
-							<a
-								href="/"
+							<Link
+								to={"/"}
 								className="inline-flex h-10 select-none items-center justify-center text-lg font-bold text-gray-800 dark:text-white"
 							>
 								nnktz
-							</a>
+							</Link>
 						</div>
 
 						<div className="flex flex-1 items-center justify-end">
