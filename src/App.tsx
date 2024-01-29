@@ -2,6 +2,7 @@ import { Section } from "./components/site/Section"
 import { Container } from "./components/site/Container"
 import { Layout } from "./components/site/Layout"
 import { Button } from "./components/lib/Button"
+import { ContentCard } from "./components/lib/Card"
 
 const App = () => {
 	return (
@@ -227,15 +228,43 @@ const App = () => {
 			</Container>
 
 			<Container
-				title="Component name using a component instead of hardcoding"
-				description="Component description using a component instead of hardcoding"
+				title="Card"
+				description="A card is flexible and extensible content container."
 			>
 				<Section
-					title="Section heading using a component instead of hardcoding"
-					description="Section description text using a component instead of hardcoding"
+					title="Simple"
+					description="Simple cards display content and provide a distinct link that can be selected."
 				>
-					<div className="bg-blue-500 p-3">component 1</div>
-					<div className="bg-blue-500 p-3">component 2</div>
+					{/* Simple card */}
+					<ContentCard
+						title="Card title"
+						subTitle="Card subtile"
+						plaintext="Some quick example text build on the card title and make up the bulk of the card's content"
+						link={{ url: "#", text: "Card link" }}
+					></ContentCard>
+				</Section>
+
+				<Section
+					title="Simple with header and footer"
+					description="Add an optional header and footer within a card."
+				>
+					{/* Simple card with header */}
+					<ContentCard
+						header="Featured"
+						title="Card title"
+						subTitle="Card subtile"
+						plaintext="Some quick example text build on the card title and make up the bulk of the card's content"
+						link={{ url: "#", text: "Card link" }}
+					></ContentCard>
+
+					{/* Simple card with footer */}
+					<ContentCard
+						footer="Last updated 5 mins ago"
+						title="Card title"
+						subTitle="Card subtile"
+						plaintext="Some quick example text build on the card title and make up the bulk of the card's content"
+						link={{ url: "#", text: "Card link" }}
+					></ContentCard>
 				</Section>
 			</Container>
 		</Layout>
