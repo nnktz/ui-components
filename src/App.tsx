@@ -4,11 +4,13 @@ import { Layout } from "./components/site/Layout"
 import { Button } from "./components/lib/Button"
 import { BlockLinkCard, ContentCard } from "./components/lib/Card"
 import { SiNextdotjs, SiReact, SiTailwindcss, SiVite } from "react-icons/si"
+import { Input } from "./components/lib/Input"
 
 const App = () => {
 	return (
 		<Layout>
 			{/* content container */}
+			{/* button */}
 			<Container
 				title="Button"
 				description="A button is a widget that enables users to trigger an action or event, such as submitting a form, opening a dialog, cancelling an action, or performing a delete operation."
@@ -228,6 +230,7 @@ const App = () => {
 				</Section>
 			</Container>
 
+			{/* card */}
 			<Container
 				title="Card"
 				description="A card is flexible and extensible content container."
@@ -291,6 +294,37 @@ const App = () => {
 					<BlockLinkCard url="https://tailwindcss.com" text="Tailwind CSS">
 						<SiTailwindcss className="h-10 w-10" />
 					</BlockLinkCard>
+				</Section>
+			</Container>
+
+			{/* input */}
+			<Container
+				title="Inputs"
+				description="An input is a widget that allows users to provide data or specify options, which can be submitted as part of a interact with and manipulate content on a web page."
+			>
+				<Section title="Basic" description="Basic input with a placeholder.">
+					{/* Basic input */}
+					<Input type="text" placeholder="Type thing here" />
+					{/* Basic disabled input */}
+					<Input disabled type="text" placeholder="Disabled 😔" />
+				</Section>
+
+				<Section title="Label" description="Input with a label.">
+					{/* Input with a label */}
+					<Input type="email" label="Email" placeholder="mail@example.com" />
+				</Section>
+
+				<Section
+					title="Description"
+					description="Basic input with a description."
+				>
+					{/* Input with a description */}
+					<Input
+						type="password"
+						label="Password"
+						placeholder="Super secret"
+						description="We'll totally never share your deets my friends 😏"
+					/>
 				</Section>
 			</Container>
 		</Layout>
